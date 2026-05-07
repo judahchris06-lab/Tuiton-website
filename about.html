@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Staff — Altair Home Tuitions</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+
+    /* ================= STAFF PAGE ================= */
+
+    .staff-hero{
+      position:relative;
+      min-height:70vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+
+      background:
+        linear-gradient(
+          rgba(7,18,35,0.10),
+          rgba(7,18,35,0.12)
+        ),
+        url('ammath.svg');
+
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+
+    .staff-hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+
+      background-image:
+      linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+
+      background-size:80px 80px;
+    }
+
+    .staff-hero-content{
+      position:relative;
+      z-index:2;
+      width:min(900px,92%);
+      margin:auto;
+      padding-top:120px;
+      padding-bottom:80px;
+    }
+
+    .staff-label{
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:100px;
+      background:rgba(201,168,76,0.12);
+      border:1px solid rgba(201,168,76,0.25);
+      color:#e8c96e;
+      letter-spacing:2px;
+      font-size:13px;
+      text-transform:uppercase;
+      margin-bottom:28px;
+      font-weight:600;
+    }
+
+    .staff-hero h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(3rem,8vw,6rem);
+      font-weight:600;
+      line-height:1;
+      color:#fff;
+      margin-bottom:25px;
+    }
+
+    .staff-hero h1 span{
+      color:#c9a84c;
+      font-style:italic;
+    }
+
+    .staff-hero p{
+      color:rgba(255,255,255,0.72);
+      font-size:18px;
+      line-height:1.9;
+      max-width:760px;
+      margin:auto;
+    }
+
+    /* ================= COUNTS ================= */
+
+    .staff-counts{
+      background:#f8f5ef;
+      padding:110px 0;
+    }
+
+    .staff-count-wrap{
+      width:min(1200px,92%);
+      margin:auto;
+      text-align:center;
+    }
+
+    .main-count{
+      font-size:140px;
+      font-weight:700;
+      color:#102542;
+      line-height:1;
+      margin-bottom:20px;
+      font-family:'Cormorant Garamond', serif;
+    }
+
+    .main-count span{
+      color:#c9a84c;
+    }
+
+    .main-sub{
+      font-size:22px;
+      color:#5f6f82;
+      margin-bottom:60px;
+    }
+
+    .subject-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
+
+    .subject-card{
+      background:#fff;
+      border-radius:28px;
+      padding:45px 35px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.06);
+      transition:0.35s;
+    }
+
+    .subject-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .subject-card h2{
+      font-size:56px;
+      color:#c9a84c;
+      margin-bottom:8px;
+      font-family:'Cormorant Garamond', serif;
+    }
+
+    .subject-card h3{
+      font-size:28px;
+      color:#102542;
+      margin-bottom:18px;
+    }
+
+    .subject-card p{
+      color:#667;
+      line-height:1.9;
+      font-size:16px;
+    }
+
+    /* ================= QUALIFICATION ================= */
+
+    .qualification-section{
+      padding:120px 0;
+      background:
+      linear-gradient(
+        rgba(10,25,48,0.94),
+        rgba(10,25,48,0.94)
+      ),
+      url('amphy.svg');
+
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+
+    .qualification-wrap{
+      width:min(1200px,92%);
+      margin:auto;
+    }
+
+    .qualification-top{
+      text-align:center;
+      max-width:850px;
+      margin:auto;
+      margin-bottom:70px;
+    }
+
+    .qualification-top h2{
+      font-size:64px;
+      color:#fff;
+      margin-bottom:20px;
+      font-family:'Cormorant Garamond', serif;
+    }
+
+    .qualification-top p{
+      color:rgba(255,255,255,0.7);
+      line-height:1.9;
+      font-size:18px;
+    }
+
+    .qualification-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .qualification-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:40px;
+      backdrop-filter:blur(8px);
+    }
+
+    .qualification-card h3{
+      color:#e8c96e;
+      font-size:28px;
+      margin-bottom:18px;
+    }
+
+    .qualification-card p{
+      color:rgba(255,255,255,0.72);
+      line-height:1.9;
+      font-size:16px;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta-band {
+      background: linear-gradient(135deg, #0B1F3A 0%, #132847 100%);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 10% 50%, rgba(201,168,76,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 50%, rgba(201,168,76,0.1) 0%, transparent 50%);
+    }
+
+    .cta-band-inner {
+      position: relative;
+      z-index: 1;
+      width:min(1200px,92%);
+      margin:auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-band h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 600;
+      color: #fff;
+      max-width: 22ch;
+      line-height:1.2;
+    }
+
+    .cta-band h2 em {
+      color: #E8C96E;
+      font-style: italic;
+    }
+
+    .cta-actions{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 28px;
+      border-radius:100px;
+      font-weight:600;
+      text-decoration:none;
+      transition:0.3s;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-primary{
+      background:#c9a84c;
+      color:#102542;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-outline{
+      border:1px solid rgba(255,255,255,0.3);
+      color:#fff;
+    }
+
+    .btn-outline:hover{
+      border-color:#c9a84c;
+      color:#c9a84c;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer{
+      background:#081321;
+      color:rgba(255,255,255,0.65);
+      padding:80px 0 30px;
+    }
+
+    .footer-wrap{
+      width:min(1200px,92%);
+      margin:auto;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1.5fr;
+      gap:40px;
+      margin-bottom:50px;
+    }
+
+    .footer-brand h2{
+      color:#fff;
+      font-size:40px;
+      margin-bottom:10px;
+      font-family:'Cormorant Garamond', serif;
+    }
+
+    .footer-brand .tagline{
+      color:#c9a84c;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:12px;
+      margin-bottom:20px;
+    }
+
+    .footer-brand p{
+      line-height:1.9;
+      max-width:360px;
+    }
+
+    .footer-col h4{
+      color:#c9a84c;
+      margin-bottom:22px;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
+    }
+
+    .footer-col ul{
+      list-style:none;
+      padding:0;
+    }
+
+    .footer-col li{
+      margin-bottom:12px;
+    }
+
+    .footer-col a{
+      text-decoration:none;
+      color:rgba(255,255,255,0.7);
+    }
+
+    .footer-contact-item{
+      margin-bottom:18px;
+      line-height:1.8;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:25px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:20px;
+      font-size:14px;
+    }
+
+    .love{
+      color:#c9a84c;
+    }
+
+    @media(max-width:900px){
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .main-count{
+        font-size:90px;
+      }
+
+      .qualification-top h2{
+        font-size:44px;
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cta-band-inner{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .main-count{
+        font-size:72px;
+      }
+
+      .staff-hero h1{
+        font-size:52px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav class="nav" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="wordmark">Altair</span>
+      <span class="tagline-small">Chennai's Premier Home Tuitions</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">Our Staff</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary nav-cta">Contact Us</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="about.html" onclick="closeMobile()">Our Staff</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+  <a href="contact.html" class="btn btn-primary" onclick="closeMobile()" style="margin-top:1rem;">Contact Us</a>
+</div>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="staff-hero">
+
+    <div class="staff-hero-content">
+
+      <div class="staff-label">
+        OUR FACULTY
+      </div>
+
+      <h1>
+        Meet the minds behind<br>
+        <span>academic excellence</span>
+      </h1>
+
+      <p>
+        Altair Home Tuitions is powered by a highly experienced and
+        academically accomplished faculty team dedicated to shaping
+        confident, high-performing students across Chennai.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================= COUNTS ================= -->
+
+  <section class="staff-counts">
+
+    <div class="staff-count-wrap">
+
+      <div class="main-count">
+        30<span>+</span>
+      </div>
+
+      <div class="main-sub">
+        Expert faculty members guiding students across multiple subjects and academic levels
+      </div>
+
+      <div class="subject-grid">
+
+        <div class="subject-card">
+
+          <h2>15+</h2>
+
+          <h3>Mathematics Faculty</h3>
+
+          <p>
+            Experienced Mathematics educators specialising in
+            CBSE, State Board, IIT–JEE, Olympiad training,
+            and Engineering Mathematics with strong conceptual teaching methods.
+          </p>
+
+        </div>
+
+        <div class="subject-card">
+
+          <h2>15+</h2>
+
+          <h3>Chemistry Faculty</h3>
+
+          <p>
+            Highly qualified Chemistry teachers for NEET,
+            board examinations, and college-level coaching
+            with practical and application-based learning approaches.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= QUALIFICATIONS ================= -->
+
+  <section class="qualification-section">
+
+    <div class="qualification-wrap">
+
+      <div class="qualification-top">
+
+        <h2>
+          Qualified. Experienced.<br>
+          Student-focused.
+        </h2>
+
+        <p>
+          Our faculty members are selected through a rigorous academic and teaching evaluation process.
+          Every mentor at Altair is committed to delivering clarity, confidence, and measurable academic growth.
+        </p>
+
+      </div>
+
+      <div class="qualification-grid">
+
+        <div class="qualification-card">
+
+          <h3>Advanced Academic Backgrounds</h3>
+
+          <p>
+            Many of our educators hold postgraduate degrees and specialised qualifications
+            in Mathematics, Physics, Chemistry, Computer Science, and Engineering disciplines.
+          </p>
+
+        </div>
+
+        <div class="qualification-card">
+
+          <h3>Competitive Exam Specialists</h3>
+
+          <p>
+            Dedicated IIT–JEE and NEET mentors with years of experience in coaching,
+            strategy development, mock testing, and high-rank exam preparation.
+          </p>
+
+        </div>
+
+        <div class="qualification-card">
+
+          <h3>Personalised Student Mentorship</h3>
+
+          <p>
+            Beyond academics, our faculty focuses on discipline, confidence-building,
+            time management, and one-to-one academic mentoring for every student.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= CTA ================= -->
+
+  <section class="cta-band">
+
+    <div class="cta-band-inner">
+
+      <h2>
+        Ready to begin your<br>
+        <em>journey to the top?</em>
+      </h2>
+
+      <div class="cta-actions">
+
+        <a href="contact.html" class="btn btn-primary">
+          Contact Us — Free Trial Class
+        </a>
+
+        <a href="tel:+914412345678" class="btn btn-outline">
+          📞 Call Us Today
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <div class="footer-wrap">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <h2>Altair</h2>
+
+          <div class="tagline">
+            Chennai's Premier Home Tuitions
+          </div>
+
+          <p>
+            Empowering students across Chennai since 2009 with expert home tuitions,
+            personalised mentoring, and an unwavering commitment to excellence.
+          </p>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Programmes</h4>
+
+          <ul>
+            <li>IIT–JEE Coaching</li>
+            <li>NEET Preparation</li>
+            <li>Board Exam (10 & 12)</li>
+            <li>Olympiad Training</li>
+            <li>Foundation (6–8)</li>
+          </ul>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Contact</h4>
+
+          <div class="footer-contact-item">
+            📍<br>
+            42, Sterling Road, Nungambakkam, Chennai – 600 034
+          </div>
+
+          <div class="footer-contact-item">
+            📞<br>
+            +91 97870 36193
+          </div>
+
+          <div class="footer-contact-item">
+            ✉️<br>
+            hello@stellarminds.in
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <div>
+          © 2025 Altair Home Tuitions. All rights reserved.
+        </div>
+
+        <div>
+          Crafted with <span class="love">♥</span> in Chennai, Tamil Nadu
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
